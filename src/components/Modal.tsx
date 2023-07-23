@@ -4,7 +4,7 @@ import { useMovieStore } from "../store/movieStore";
 import { Options } from "../lib/types";
 
 export default function Modal({ isOpen, onCloseModal }: { isOpen: boolean; onCloseModal: () => void }) {
-  const filterAndSort = useMovieStore((state) => state.filterAndSort);
+  const refine = useMovieStore((state) => state.refine);
   const { filter, sort, filterYear } = useMovieStore((state) => state);
   const [formData, setFormData] = useState<Options>({ filter, sort, filterYear });
 
@@ -18,7 +18,7 @@ export default function Modal({ isOpen, onCloseModal }: { isOpen: boolean; onClo
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    filterAndSort(formData);
+    refine(formData);
     onCloseModal();
   };
 

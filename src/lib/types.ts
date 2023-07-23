@@ -24,3 +24,12 @@ export type Options = {
   filterYear: string;
   sort: SortBy;
 };
+
+export interface MovieStore {
+  allMovies: Movie[];
+  customMovieList: Movie[];
+  filter: filterKind;
+  sort: SortBy;
+  filterYear: string;
+  refine: (options: Options) => void;
+}

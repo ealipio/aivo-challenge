@@ -1,16 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Movie, Options, SortBy, filterKind } from "../lib/types";
+import { MovieStore } from "../lib/types";
 import { movies } from "../lib/data";
-
-interface MovieStore {
-  allMovies: Movie[];
-  customMovieList: Movie[];
-  filter: filterKind;
-  sort: SortBy;
-  filterYear: string;
-  filterAndSort: (options: Options) => void;
-}
+import { refine } from "../lib/utils";
 
 export const useMovieStore = create<MovieStore>()(
   persist(
@@ -20,11 +12,7 @@ export const useMovieStore = create<MovieStore>()(
       filter: "",
       sort: "",
       filterYear: "",
-      filterAndSort: ({ filter, filterYear, sort }) =>
-        set((currentState) => {
-          // todo
-          return { currentState, filter, filterYear, sort };
-        }),
+      refine: (options) => set(refine(options)),
     }),
     { name: "streamingFy" },
   ),
