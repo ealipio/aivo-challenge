@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { MovieStore } from "../lib/types";
 import { movies } from "../lib/data";
-import { refine } from "../lib/utils";
+import { refine } from "../lib/helpers";
 
 export const useMovieStore = create<MovieStore>()(
   persist(

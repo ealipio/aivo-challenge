@@ -1,13 +1,13 @@
-import { Movie, MovieStore, Options, SortBy, filterKind } from "../lib/types";
+import { Movie, MovieStore, Options, SortBy, filterKind } from "./types";
 
-const filterArrayBy = (arr: Movie[], filterBy: filterKind, year: string) => {
+export const filterArrayBy = (arr: Movie[], filterBy: filterKind, year: string) => {
   if (filterBy === "movie" || filterBy === "series") {
     return arr.filter(({ programType }) => programType === filterBy);
   }
   return arr.filter(({ releaseYear }) => releaseYear === Number.parseInt(year));
 };
 
-const sortArrayBy = (arr: Movie[], sortBy: SortBy) => {
+export const sortArrayBy = (arr: Movie[], sortBy: SortBy) => {
   if (sortBy === "year_up") {
     return arr.sort((a, b) => a.releaseYear - b.releaseYear);
   }
