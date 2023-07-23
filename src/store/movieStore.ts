@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Movie, Options } from "../lib/types";
+import { Movie, Options, SortBy, filterKind } from "../lib/types";
 import { movies } from "../lib/data";
 
 interface MovieStore {
   allMovies: Movie[];
   customMovieList: Movie[];
-  filter: string;
-  sort: string;
+  filter: filterKind;
+  sort: SortBy;
   filterYear: string;
   filterAndSort: (options: Options) => void;
 }
