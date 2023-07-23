@@ -51,4 +51,5 @@ y el título de la película o serie. El usuario tendrá la posibilidad de orden
 - install dependencies: `pnpm i`
 - start dev mode: `pnpm run dev`
 
-that's it :)
+> keep in mind that the filter options are keep it on the localStorage
+> that's it :)
