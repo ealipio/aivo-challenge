@@ -1,27 +1,54 @@
-# React + TypeScript + Vite
+# Streaming Platform Challenge:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desarrollar la clásica plataforma de streaming.
 
-Currently, two official plugins are available:
+## Muestra tus conocimientos:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Crear un repositorio público
+2. Realizar commits de cada paso de su proceso
+3. No olvidar las buenas prácticas
+4. ES6+
+5. Unit test
 
-## Expanding the ESLint configuration
+## Requerimientos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Diseñar e implementar una aplicación web para la plataforma de streaming utilizando
+  Angular o React.
+- Es un ejercicio básico, se buscará que el código sea simple, bien diseñado, eficaz y en
+  lo posible, comprobado con unit test.
+- Se podrá usar cualquier librería de css.
+- Debe contener 2 secciones principales, la de login y la home.
 
-- Configure the top-level `parserOptions` property like this:
+### Login
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Debe tener una Login Page para autenticar el usuario, se puede usar Auth0 para gestionar la
+identidad del usuario. Si la autenticación es exitosa, debe redirigir a la Home Page.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Home
+
+La Home Page deberá mostrar el listado de películas y series, cada item debe mostrar la imagen
+y el título de la película o serie. El usuario tendrá la posibilidad de ordenar y filtrar los datos.
+
+- Se podrá ordenar por: nombre, año.
+- Se podrá filtrar por: año, película o serie.
+- Se envía link de archivo .json para descargar y consumirlo simulando un servicio REST. https://assets-aivo.s3.amazonaws.com/movies.json
+
+## Entregables:
+
+- Código en repositorio público de GitHub, Bitbucket o similar
+- Incluir un archivo README con instrucciones de configuración o documentación.
+  Tiempo de entrega
+- No necesitas completar todo el desafío.
+- Sugerimos no gastar más de 8 horas en total, repartiendo el trabajo en el transcurso de
+  2 a 3 días.
+- Realizar commits con la mayor frecuencia posible, no realizar todo en un único commit.
+- Se evaluará el código, el tiempo empleado, la creatividad y cómo se priorizan los
+  requerimientos.
+
+## Run in development
+
+- clone the repo
+- install dependencies: `pnpm i`
+- start dev mode: `pnpm run dev`
+
+that's it :)
